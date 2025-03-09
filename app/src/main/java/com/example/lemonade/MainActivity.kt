@@ -95,16 +95,14 @@ fun LemonadeApp(name: String, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        var count = (2..4).random()
         Button(
             onClick = {
                 when (step) {
                     2 -> {
-                        var count = (2..4).random()
-                        while (count > 0) {
-                            count--
-                            if (count == 0) {
-                                step = 3
-                            }
+                        count--
+                        if (count == 0) {
+                            step++
                         }
                     }
                     4 -> {
